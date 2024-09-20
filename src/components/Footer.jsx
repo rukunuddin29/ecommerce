@@ -1,6 +1,8 @@
 import React from 'react';
 import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from 'react-icons/fa'; // Import icons
 
+
+
 const Footer = () => {
   return (
     <footer className="bg-[#080127] py-16">
