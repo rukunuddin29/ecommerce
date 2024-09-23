@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState,useContext } from 'react';
+import { ShopContext } from '../context/ShopContext'; 
 import { Link, NavLink } from 'react-router-dom';
 import { RxHamburgerMenu } from "react-icons/rx";
 import { AiOutlineClose } from 'react-icons/ai';
@@ -8,30 +9,14 @@ import { CgProfile } from 'react-icons/cg';  // Import Profile Icon
 import { SlHandbag } from 'react-icons/sl';  // Import Handbag Icon
 
 function Navbar() {
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
-  const [searchTerm, setSearchTerm] = useState('');
 
-  // Function to toggle dropdown visibility
-  const toggleDropdown = () => {
-    setIsDropdownOpen(!isDropdownOpen);
-  };
+  const {  setShowSearch } = useContext(ShopContext);
+
+  const [isMobile, setIsMobile] = useState(false);
 
   // Function to toggle mobile menu visibility
   const toggleMenu = () => {
     setIsMobile(!isMobile);
-  };
-
-  // Handle search input change
-  const handleSearchChange = (event) => {
-    setSearchTerm(event.target.value);
-  };
-
-  // Handle search submit
-  const handleSearchSubmit = (event) => {
-    event.preventDefault();
-    // Implement your search functionality here
-    console.log("Searching for:", searchTerm);
   };
 
   // Function to handle mobile link click (closes the mobile menu)
@@ -61,11 +46,11 @@ function Navbar() {
               <hr className='w-2/4 border-none h-[1.5px] bg-gray-700 hidden'/>
             </NavLink>
             <NavLink to='/contact' className='flex flex-col items-center gap-1'>
-              <p>CONTACT</p>
+              <p>PRODUCTS</p>
               <hr className='w-2/4 border-none h-[1.5px] bg-gray-700 hidden'/>
             </NavLink>
             <NavLink to='/product' className='flex flex-col items-center gap-1'>
-              <p>PRODUCT</p>
+              <p>CONTACT</p>
               <hr className='w-2/4 border-none h-[1.5px] bg-gray-700 hidden'/>
             </NavLink>
           </ul>
@@ -73,10 +58,10 @@ function Navbar() {
 
         {/* Desktop Cart, Search, and Login */}
         <div className='flex items-center ml-auto mr-6 gap-4'>
-          <LuSearch className='w-5 text-xl cursor-pointer mr-[-15px] lg:mr-0' />
+          <LuSearch onClick={()=>setShowSearch(true)} className='w-5 text-xl cursor-pointer mr-[-15px] lg:mr-0' />
           <div className='group relative'>
             <CgProfile className='w-5 lg:text-[3rem] lg:cursor-pointer lg:block hidden' />
-            <div className='group-hover:block hidden absolute dropdown-menu right-0 pt-4'>
+            <div className='group-hover:block hidden absolute  right-0 pt-0'>
               <div className='flex flex-col gap-2 w-36 py-3 px-5 bg-slate-200'>
                 <p>My Profile</p>
                 <p>Orders</p>
@@ -101,19 +86,19 @@ function Navbar() {
       </header>
 
       {/* Mobile Menu */}
-      {isMobile && (
-        <div className='bg-slate-700 fixed top-0 left-0 w-full h-full z-50 flex flex-col p-6'>
+    
+        <div className={`bg-slate-700 fixed top-0 left-0 w-full h-full z-50 flex flex-col p-6 ${isMobile ? 'w-full' : 'hidden' }`} >
           <button className='absolute top-4 right-4 text-white text-2xl' onClick={toggleMenu}>
             <AiOutlineClose />
           </button>
           <div className='flex flex-col mt-10 space-y-4'>
-            <Link to="/" className="text-white text-lg py-2 hover:text-orange-400 transition duration-300" onClick={handleLinkClick}>Home</Link>
-            <Link to="/about" className="text-white text-lg py-2 hover:text-orange-400 transition duration-300" onClick={handleLinkClick}>About</Link>
-            <Link to="/contact" className="text-white text-lg py-2 hover:text-orange-400 transition duration-300" onClick={handleLinkClick}>Contact</Link>
-            <Link to="/product" className="text-white text-lg py-2 hover:text-orange-400 transition duration-300" onClick={handleLinkClick}>Product</Link>
+            <Link to="/" className="text-white text-lg py-2 hover:text-orange-400 transition duration-300" onClick={handleLinkClick}>HOME</Link>
+            <Link to="/about" className="text-white text-lg py-2 hover:text-orange-400 transition duration-300" onClick={handleLinkClick}>ABOUT</Link>
+            <Link to="/contact" className="text-white text-lg py-2 hover:text-orange-400 transition duration-300" onClick={handleLinkClick}>PRODUCTS</Link>
+            <Link to="/product" className="text-white text-lg py-2 hover:text-orange-400 transition duration-300" onClick={handleLinkClick}>CONTACT</Link>
           </div>
         </div>
-      )}
+     
     </>
   );
 }

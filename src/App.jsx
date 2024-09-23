@@ -10,11 +10,13 @@ import Login from './pages/Login.jsx';
 import Cart from './pages/Cart.jsx';
 import Navbar from './components/Navbar.jsx';
 import Footer from './components/Footer.jsx';
+import SearchBar from './components/SearchBar.jsx';
 
 function App() {
   return (
     <>
       <Navbar/>
+      <SearchBar/>
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/about' element={<About />} />

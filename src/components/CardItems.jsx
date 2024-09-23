@@ -37,7 +37,7 @@ function CardItems({ id, image, name, price }) {
             </span>
           </div>
         </div>
-     <button className="border-[3px] rounded-3xl hover:text-[#080127] text-white  hover:bg-white bg-[#080127] w-3/4 h-10 border-[#080127]">Add to cart </button>
+     <button className="border-[3px] rounded-[5px] hover:text-[#080127] text-white  hover:bg-white bg-[#080127] w-full h-10 border-[#080127]">Add to cart </button>
       </div>
     </Link>
   );

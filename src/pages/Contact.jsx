@@ -3,7 +3,7 @@ import { ShopContext } from "../context/ShopContext";
 import CardItems from "../components/CardItems";
 
 function Contact() {
-  const { items } = useContext(ShopContext); // Fetch items from ShopContext
+  const { items , showSearch, search} = useContext(ShopContext); // Fetch items from ShopContext
   const [showCategories, setShowCategories] = useState(false);
   const [category, setCategory] = useState([]);
   const [products, setProducts] = useState([]);
@@ -23,6 +23,12 @@ function Contact() {
   const applyFilter = () => {
     let productsCopy = items.slice();
 
+    if (search && showSearch) {
+      productsCopy = productsCopy.filter((item) =>
+        item.name.toLowerCase().includes(search.toLowerCase())
+      );
+    }
+
     if (category.length > 0) {
       productsCopy = productsCopy.filter((item) =>
         category.includes(item.category)
@@ -33,10 +39,10 @@ function Contact() {
 
   useEffect(() => {
     applyFilter(); // Apply the filter whenever the category changes
-  }, [category]);
+  }, [category,search,showSearch]);
 
   return (
-    <div className="flex flex-col sm:flex-row p-10 gap-8 sm:gap-16 pt-12 border-t border-gray-200 bg-white">
+    <div className="flex flex-col sm:flex-row p-4 gap-8 sm:gap-16 pt-12  border-gray-200 bg-white">
       {/* Sidebar */}
       <div className="w-1/8 lg:border-r border-gray-300 pr-6">
         <h2 className="text-2xl font-bold flex items-center justify-between sm:justify-start text-gray-800">
@@ -98,7 +104,7 @@ function Contact() {
       </div>
 
       {/* Main Content - Display products using CardItems */}
-      <div className="flex-1 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+      <div className="flex-1 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
         {products.map((item, index) => (
           <CardItems
             key={index}

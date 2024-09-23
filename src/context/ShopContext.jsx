@@ -1,6 +1,7 @@
 // src/context/ShopContext.jsx
-import React, { createContext } from 'react';
+import React, { createContext, useState } from 'react';
 import { items } from '../assets/assets.js'; // Import your items array
+
 
 // Create the context
 export const ShopContext = createContext();
@@ -8,12 +9,18 @@ export const ShopContext = createContext();
 const ShopContextProvider = (props) => {
   const currency = '$';
   const deliveryFee = '10';
+  const [search,setSearch]=useState('')
+  const [showSearch,setShowSearch]=useState(false)
 
   // Define the context value
   const value = {
     items, 
     currency, 
-    deliveryFee
+    deliveryFee,
+    search,
+    setShowSearch,
+     showSearch,
+     setSearch
   };
 
   return (
