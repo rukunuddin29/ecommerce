@@ -20,7 +20,7 @@ function Contact() {
     setProducts(items); // Set products based on the items from ShopContext
   }, [items]);
 
-  const applyFilter = () => {
+  const applyFilter = () => { 
     let productsCopy = items.slice();
 
     if (search && showSearch) {

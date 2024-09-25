@@ -3,14 +3,13 @@ import { ShopContext } from '../context/ShopContext';
 import { Link, NavLink } from 'react-router-dom';
 import { RxHamburgerMenu } from "react-icons/rx";
 import { AiOutlineClose } from 'react-icons/ai';
-
 import { LuSearch } from 'react-icons/lu';  // Import Search Icon
 import { CgProfile } from 'react-icons/cg';  // Import Profile Icon
 import { SlHandbag } from 'react-icons/sl';  // Import Handbag Icon
 
 function Navbar() {
 
-  const {  setShowSearch } = useContext(ShopContext);
+  const {  setShowSearch,getCart } = useContext(ShopContext);
 
   const [isMobile, setIsMobile] = useState(false);
 
@@ -71,7 +70,7 @@ function Navbar() {
           </div>
           <Link to='/cart' className='relative'>
             <SlHandbag className='w-5 text-xl min-w-5' />
-            <p className='absolute right-[-10px] bottom-[3px] w-4 text-center leading-4 bg-black text-white aspect-square rounded-full text-[8px]'>10</p>
+            <p className='absolute right-[-10px] bottom-[3px] w-4 text-center leading-4 bg-black text-white aspect-square rounded-full text-[8px]'>{getCart()}</p>
           </Link>
         </div>
         
@@ -81,7 +80,7 @@ function Navbar() {
             <AiOutlineClose size={28} onClick={toggleMenu} className='cursor-pointer text-black' />
           ) : (
             <RxHamburgerMenu size={28} onClick={toggleMenu} className='cursor-pointer text-black' />
-          )}
+          )} 
         </div>
       </header>
 

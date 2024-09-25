@@ -12,7 +12,7 @@ function Home() {
       <Hero></Hero> 
       <MovingTextStrip></MovingTextStrip>
       <LatestCollections/>
-   
+      
       <Aboutus></Aboutus>
     </>
   )
