@@ -1,37 +1,79 @@
 import React from 'react';
-import a from '../assets/A.jpg';
-import b from '../assets/b.png';
+import a from '../assets/A.jpg'; // Assuming this is the correct image import
+
+// Text object for the content
+const text = {
+  image: a, // Using the imported image directly
+  title: "About Us",
+  main: "We provide high-quality pneumatic solutions for industrial applications.",
+  description: "With years of expertise, we ensure our products are reliable, affordable, and accessible to businesses of all sizes."
+};
 
 function About() {
   return (
     <>
-      <div className="w-screen h-auto">
-        {/* Top section with background image */}
-        <img src={b} className="w-full h-[35vh] object-cover border-b border-black" alt="Background" />
+      {/* First Section */}
+      <h1 className='text-xl lg:text-4xl font-bold text-[#080127] text-center w-11/12 mx-auto mt-10 mb-16 lg:mb-20'>
+        Committed to Delivering Top-Quality <span className='text-orange-400'>Pneumatic</span> Service and Support
+      </h1>
 
-        {/* Profile image */}
-        <img 
-          src={a} 
-          className="w-auto sm:w-2/4 border-4 border-white rounded-full h-[50vh] mx-auto -mt-16 relative z-10 object-cover" 
-          alt="Profile" 
-        />
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="grid lg:grid-cols-2 bg-white rounded-2xl shadow-lg m-6 lg:m-10 gap-6 lg:gap-10">
+          
+          {/* Image Section */}
+          <div>
+            <div className="w-full h-full">
+              <div className="relative">
+                <img
+                  src={text.image} // Use the image from the object
+                  className="w-full h-52 sm:h-64 lg:h-[60vh] object-cover rounded-tl-2xl lg:rounded-bl-2xl"
+                  alt="About Us"
+                />
+              </div>
+            </div>
+          </div>
+
+          {/* Text Section */}
+          <div className="flex items-center justify-center p-6 sm:p-8 lg:p-16">
+            <div>
+              <h1 className="text-2xl lg:text-4xl font-bold text-gray-800 mb-4">{text.title}</h1>
+              <p className="text-md lg:text-xl text-gray-600">{text.main}</p>
+              <p className="text-sm lg:text-md text-gray-500 mt-4">{text.description}</p>
+            </div>
+          </div>
+        </div>
       </div>
 
-      {/* About text */}
-      <div className="px-4 lg:px-40 py-10 text-center">
-        <h1 className="text-3xl font-bold mb-6">About Vidyard</h1>
-        <p className="text-lg mb-4">
-          Vidyard’s About Us page leads with a headline highlighting its mission and flows directly into the core functions of its product. 
-          The page has a product demo video that you’ll stumble across as you scroll, revealing additional use cases.
-        </p>
-        <p className="text-lg mb-4">
-          This high-level approach to an About Us page places the primary focus on the product’s benefits with a secondary focus on the team. 
-          If your product is complex, this may be an approach to consider.
-        </p>
-        <p className="text-lg mb-4">
-          Consumer-Packaged Goods (CPG) Industry: RXBAR, The Sill, and Hydrant are examples of CPG companies that effectively use About Us 
-          pages to tell their stories.
-        </p>
+      {/* Second Section */}
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="grid lg:grid-cols-2 bg-white rounded-2xl shadow-lg m-6 lg:m-10 gap-6 lg:gap-10">
+          
+          {/* Text Section */}
+          <div className="flex items-center justify-center p-6 sm:p-8 lg:p-16">
+            <div>
+              <h1 className="text-2xl lg:text-4xl font-bold text-gray-800 mb-4">We are Creative Since 2005</h1>
+              <p className="text-md lg:text-xl text-gray-600">
+                Pagedone isn’t just a collection of components and guidelines; it's a philosophy. We go beyond aesthetics, prioritizing accessibility, scalability, and usability.
+              </p>
+              <p className="text-sm lg:text-md text-gray-500 mt-4">
+                Every element, from the tiniest detail to the grandest layout, is meticulously crafted to enhance functionality and elevate user satisfaction.
+              </p>
+            </div>
+          </div>
+
+          {/* Image Section */}
+          <div>
+            <div className="w-full h-full">
+              <div className="relative">
+                <img
+                  src={text.image} // Use the image from the object
+                  className="w-full h-52 sm:h-64 lg:h-[60vh] object-cover rounded-tr-2xl lg:rounded-bl-2xl"
+                  alt="We are Creative Since 2005"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </>
   );
