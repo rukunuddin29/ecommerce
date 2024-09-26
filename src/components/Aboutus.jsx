@@ -17,8 +17,8 @@ function Aboutus() {
         </div>
 
         {/* Banner */}
-        <div className="relative rounded-xl mb-6 border h-[50vh]">
-          <img src={about} alt="Banner" className="w-full rounded-xl h-full object-cover" />
+        <div className="relative rounded-xl mb-6 border ">
+          <img src={about} alt="Banner" className="w-full rounded-xl h-[15vh] lg:h-full object-cover" />
         </div>
 
         {/* Features Section */}

@@ -10,6 +10,7 @@ import Login from './pages/Login.jsx';
 import Cart from './pages/Cart.jsx';
 import Navbar from './components/Navbar.jsx';
 import Footer from './components/Footer.jsx';
+import Connect from './pages/Contact.jsx'
 import SearchBar from './components/SearchBar.jsx';
 
 function App() {
@@ -21,7 +22,8 @@ function App() {
         <Route path='/' element={<Home />} />
         <Route path='/about' element={<About />} />
         <Route path='/cart' element={<Cart />} />
-        <Route path='/contact' element={<Contact />} />
+        <Route path='/connect' element={<Connect/>} />
+        <Route path='/product' element={<Contact/>} />
         <Route path='/login' element={<Login />} />
         <Route path='/products/:productsId' element={<Pdt/>} />
         <Route path='/placeorder' element={<PlaceOrder />} /> {/* Corrected path */}

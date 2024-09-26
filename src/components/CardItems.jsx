@@ -7,11 +7,11 @@ function CardItems({ id, image, name, price }) {
 
   return (
     <Link
-      className="relative flex flex-col w-full max-w-full overflow-hidden rounded-lg border hover:border-gray-900 bg-white border-gray-200 shadow-md"
+      className="relative flex flex-col  w-full max-w-full overflow-hidden rounded-lg border hover:border-gray-900 bg-white border-gray-200 shadow-md"
       to={`/products/${id}`}
     >
-      <div className="relative flex h-48 sm:h-60 md:h-64 lg:h-64 overflow-hidden rounded-t-lg">
-        <img className="object-cover w-full h-full" src={image} alt="product" />
+      <div className="relative flex h-80  md:h-64 lg:h-64 overflow-hidden rounded-t-lg">
+        <img className="object-cover w-full h-full  " src={image} alt="product" />
         <span className="absolute top-2 left-2 rounded-full bg-[#FE7A36] px-2 py-1 text-center text-xs font-medium text-white sm:text-sm">
           39% OFF
         </span>
