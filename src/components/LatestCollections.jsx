@@ -57,7 +57,7 @@ function LatestCollections() {
       {/* Rendering latest products */}
       <Slider {...settings}>
         {latestProducts.map((item) => (
-          <div key={item._id} className="p-">  {/* Added padding for spacing */}
+          <div key={item._id} className="p-2">  {/* Added padding for spacing */}
             <CardItems id={item._id} image={item.image} name={item.name} price={item.price} />
           </div>
         ))}

@@ -14,7 +14,7 @@ function About() {
     <>
       {/* First Section */}
       <h1 className='text-2xl lg:text-4xl font-bold text-[#080127] text-center w-11/12 lg:w-1/2 mx-auto mt-10 mb-16'>
-        Committed to Delivering Top-Quality <span className='text-orange-400'>Pneumatic</span> Service and Support
+        Committed to Delivering Top-Quality <span className='text-[#EE6F57]'>Pneumatic</span> Service and Support
       </h1>
 
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
