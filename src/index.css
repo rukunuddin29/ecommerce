@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+
+body{
+    background-color:#F6F5F5;
+}
 a.active hr{
     display:block;
 }

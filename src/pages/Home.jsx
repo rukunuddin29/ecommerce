@@ -10,9 +10,7 @@ function Home() {
   return (
     <>
       <Hero></Hero> 
-      <MovingTextStrip></MovingTextStrip>
-      <LatestCollections/>
-      
+      <LatestCollections/> 
       <Aboutus></Aboutus>
     </>
   )

@@ -7,7 +7,7 @@ function CardItems({ id, image, name, price }) {
 
   return (
     <Link
-      className="relative flex flex-col w-full max-w-full overflow-hidden rounded-lg border hover:border-gray-900 border-gray-200 shadow-md"
+      className="relative flex flex-col w-full max-w-full overflow-hidden rounded-lg border hover:border-gray-900 bg-white border-gray-200 shadow-md"
       to={`/products/${id}`}
     >
       <div className="relative flex h-48 sm:h-60 md:h-64 lg:h-64 overflow-hidden rounded-t-lg">

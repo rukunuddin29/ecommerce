@@ -1,162 +1,120 @@
+import heavy from './heavyDuty.jpg';
+import ag from './AG.jpg'
+import dieGrinder from './dieGrinder.jpg'
+import grinder from './grinder.jpg'
+import vertical from './vertical.jpg'
+import bench from './bench.jpg'
+import niddle from './3niddle.jpeg'
+import sandR from './3sand.png'
+import rivet from './rivetbuster.jpeg'
+import hoist from './hoist.jpg'
+import wrench from './impactwrench.jpg'
+import paving from './paving.jpg'
+
+export const assets = {
+  heavy,
+  ag,
+  dieGrinder,
+  grinder,
+  vertical,
+  bench,
+  sandR,
+  niddle,
+  rivet,
+  hoist,
+  wrench,
+  paving
+}
+
 export const items = [
   {
     _id: "aaaaa",
-    name: "Product 1",
+    name: "Air Sander",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     price: "200",
-    image: "sample1.jpg",
-    category: "A",
+    image: assets.heavy,
+    category: "grinder", // Changed to "grinder"
   },
   {
     _id: "bbbbb",
-    name: "Product 2",
+    name: "Heavy Duty Grinder ",
     description: "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     price: "300",
-    image: "sample2.jpg",
-    category: "B",
+    image: assets.ag,
+   category: "grinder", // Changed to match "driller" category in Contact component
   },
   {
     _id: "ccccc",
-    name: "Product 3",
+    name: "Die Grinder ",
     description: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.",
     price: "250",
-    image: "sample3.jpg",
-    category: "A",
+    image: assets.dieGrinder,
+    category: "grinder", 
   },
   {
     _id: "ddddd",
-    name: "Product 4",
+    name: "Bench Rammers",
     description: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore.",
     price: "150",
-    image: "sample4.jpg",
-    category: "C",
+    image: assets.bench,
+    category: "rammers", // Changed to match "rammers" category in Contact component
   },
+  // Repeat the process for other items, aligning their categories
   {
-    _id: "eeeee",
-    name: "Product 5",
+    _id: "eeee",
+    name: "Vertical Grinder & Sander",
     description: "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui.",
     price: "220",
-    image: "sample5.jpg",
-    category: "B",
+    image:assets.vertical,
+    category: "grinder", // Example updated category
   },
   {
     _id: "fffff",
-    name: "Product 6",
+    name: "Sand Rammer",
     description: "Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse.",
     price: "180",
-    image: "sample6.jpg",
-    category: "C",
+    image:assets.sandR,
+    category: "rammers", // Example updated category
   },
   {
     _id: "ggggg",
-    name: "Product 7",
+    name: "Rivet Buster",
     description: "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis.",
     price: "270",
-    image: "sample7.jpg",
-    category: "A",
+    image: assets.rivet,
+    category: "driller", // Example updated category
   },
   {
-    _id: "hhhhh",
-    name: "Product 8",
-    description: "Et harum quidem rerum facilis est et expedita distinctio.",
-    price: "310",
-    image: "sample8.jpg",
-    category: "B",
-  },
-  {
-    _id: "iiiii",
-    name: "Product 9",
-    description: "Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil.",
-    price: "190",
-    image: "sample9.jpg",
-    category: "C",
-  },
-  {
-    _id: "jjjjj",
-    name: "Product 10",
-    description: "Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus.",
-    price: "210",
-    image: "sample10.jpg",
-    category: "A",
-  },
-  {
-    _id: "kkkkk",
-    name: "Product 11",
-    description: "Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.",
-    price: "230",
-    image: "sample11.jpg",
-    category: "B",
-  },
-  {
-    _id: "lllll",
-    name: "Product 12",
-    description: "Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet.",
-    price: "170",
-    image: "sample12.jpg",
-    category: "C",
-  },
-  {
-    _id: "mmmmm",
-    name: "Product 13",
-    description: "Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit.",
-    price: "330",
-    image: "sample13.jpg",
-    category: "A",
-  },
-  {
-    _id: "nnnnn",
-    name: "Product 14",
-    description: "Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil.",
-    price: "290",
-    image: "sample14.jpg",
-    category: "B",
-  },
-  {
-    _id: "ooooo",
-    name: "Product 15",
-    description: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque.",
-    price: "260",
-    image: "sample15.jpg",
-    category: "C",
-  },
-  {
-    _id: "ppppp",
-    name: "Product 16",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.",
-    price: "240",
-    image: "sample16.jpg",
-    category: "A",
-  },
-  {
-    _id: "qqqqq",
-    name: "Product 17",
-    description: "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet.",
-    price: "280",
-    image: "sample17.jpg",
-    category: "B",
-  },
-  {
-    _id: "rrrrr",
-    name: "Product 18",
-    description: "Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis.",
-    price: "310",
-    image: "sample18.jpg",
-    category: "C",
-  },
-  {
-    _id: "sssss",
-    name: "Product 19",
+    _id: "ggggg1",
+    name:"Hoists",
     description: "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis.",
     price: "270",
-    image: "sample19.jpg",
-    category: "A",
+    image: assets.hoist,
+    category: "driller", // Example updated category
+  },
+    {
+    _id: "ggggg2",
+    name: "Impact Wrench",
+    description: "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis.",
+    price: "270",
+    image: assets.wrench,
+    category: "impact wrench", // Example updated category
+  },
+  // Continue updating the rest of the items
+  {
+    _id: "fffff",
+    name: "Niddle Rammers",
+    description: "Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse.",
+    price: "180",
+    image:assets.niddle,
+    category: "rammers", // Example updated category
   },
   {
-    _id: "ttttt",
-    name: "Product 20",
-    description: "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia.",
-    price: "350",
-    image: "sample20.jpg",
-    category: "B",
+    _id: "fffff",
+    name: "Paving Break",
+    description: "Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse.",
+    price: "180",
+    image: assets.paving,
+    category: "impact wrench", // Example updated category
   },
 ];

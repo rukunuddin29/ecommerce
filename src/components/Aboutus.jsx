@@ -1,5 +1,6 @@
 import React from 'react';
 import Title from './Title';
+import about from '../assets/ABOUT.png'
 
 function Aboutus() {
   return (
@@ -16,17 +17,17 @@ function Aboutus() {
         </div>
 
         {/* Banner */}
-        <div className="relative py-16 px-4 rounded-lg mb-6 border border-black h-72">
-          <img src="" alt="Banner" className="w-full h-full object-cover" />
+        <div className="relative rounded-xl mb-6 border h-[50vh]">
+          <img src={about} alt="Banner" className="w-full rounded-xl h-full object-cover" />
         </div>
 
         {/* Features Section */}
-        <div className="flex flex-wrap justify-center gap-4">
+        <div className="flex flex-wrap justify-center gap-3 pb-4">
           <div className="p-4 w-full sm:w-1/2 md:w-1/4 text-center">
             <h1 className="text-3xl text-[#EE6F57] mb-4 font-bold">10</h1>
             <h4 className="text-lg">Years of Experience</h4>
           </div>
-          <div className="p-4 w-full sm:w-1/2 md:w-1/4 text-center">
+          <div className="p-4 w-full sm:w-1/2 md:w-1/5 text-center">
             <h1 className="text-3xl text-[#EE6F57] mb-4 font-bold">200+</h1>
             <h4 className="text-lg">Projects Completed</h4>
           </div>

@@ -69,7 +69,7 @@ function Contact() {
               type="checkbox"
               onChange={toggleCategory}
               className="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
-              value={"A"}
+              value={"grinder"}
             />
             <span>Grinder</span>
           </label>
@@ -78,16 +78,16 @@ function Contact() {
               type="checkbox"
               onChange={toggleCategory}
               className="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
-              value={"C"}
+              value={"hammers"}
             />
-            <span>Category 1</span>
+            <span>Hammers</span>
           </label>
           <label className="flex items-center gap-3 hover:text-blue-500 transition-colors">
             <input
               type="checkbox"
               className="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
               onChange={toggleCategory}
-              value={"B"}
+              value={"driller"}
             />
             <span>Driller</span>
           </label>
@@ -96,9 +96,18 @@ function Contact() {
               type="checkbox"
               className="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
               onChange={toggleCategory}
-              value={"D"}
+              value={"rammers"}
             />
-            <span>Another Grinder</span>
+            <span>Rammers</span>
+          </label>
+          <label className="flex items-center gap-3 hover:text-blue-500 transition-colors">
+            <input
+              type="checkbox"
+              className="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
+              onChange={toggleCategory}
+              value={"impact wrench"}
+            />
+            <span>Impact Wrenches</span>
           </label>
         </div>
       </div>

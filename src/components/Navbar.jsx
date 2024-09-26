@@ -25,7 +25,7 @@ function Navbar() {
 
   return (
     <>
-      <header className='w-full flex h-16 lg:h-16 border bg-white sticky top-0 z-50'>
+      <header className='w-full flex h-16 lg:h-16 border bg-white sticky top-0  z-50'>
         <div className='flex-1 flex items-center px-4'>
         <Link to='/'>  <img 
             src="https://tse2.mm.bing.net/th?id=OIP.UxgHuH2ZcDI9H287UoNP-QHaHa&pid=Api&P=0&h=180" 

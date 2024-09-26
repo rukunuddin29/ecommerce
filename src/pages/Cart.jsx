@@ -26,9 +26,9 @@ function Cart() {
           cartData.map((pdt, index) => {
             const productData = items.find((product) => product._id === pdt._id); // Use pdt._id instead of items._id
             return (
-              <div key={index}>
+              <div key={index} className='w-full h-20 border border-black '>
                 <div>
-                  <img src={productData.image} alt="" />
+                  <img className='border-black' src={productData.image} alt="" />
                   <div>
                     <p>{productData.name}</p>   
                     <p>{currency}{productData.price}</p>

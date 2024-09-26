@@ -26,7 +26,7 @@ function Pdt() {
           {/* Product Image */}
           <div className="w-full md:w-1/2 mb-6 md:mb-0">
             <img
-              src=""
+              src={productData.image}
               alt={productData.name}
               className="w-[100vh] h-[80vh] object-cover rounded-lg shadow-lg border border-black"
             />
