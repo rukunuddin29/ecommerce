@@ -13,7 +13,7 @@ function About() {
   return (
     <>
       {/* First Section */}
-      <h1 className='text-xl lg:text-4xl font-bold text-[#080127] text-center w-11/12 mx-auto mt-10 mb-16 lg:mb-20'>
+      <h1 className='text-2xl lg:text-4xl font-bold text-[#080127] text-center w-11/12 lg:w-1/2 mx-auto mt-10 mb-16'>
         Committed to Delivering Top-Quality <span className='text-orange-400'>Pneumatic</span> Service and Support
       </h1>
 
@@ -52,9 +52,7 @@ function About() {
           <div className="flex items-center justify-center p-6 sm:p-8 lg:p-16">
             <div>
               <h1 className="text-2xl lg:text-4xl font-bold text-gray-800 mb-4">We are Creative Since 2005</h1>
-              <p className="text-md lg:text-xl text-gray-600">
-                Pagedone isn’t just a collection of components and guidelines; it's a philosophy. We go beyond aesthetics, prioritizing accessibility, scalability, and usability.
-              </p>
+              <p className="text-md lg:text-xl text-gray-600">Pagedone isn’t just a collection of components and guidelines; it's a philosophy. We go beyond aesthetics, prioritizing accessibility, scalability, and usability.</p>
               <p className="text-sm lg:text-md text-gray-500 mt-4">
                 Every element, from the tiniest detail to the grandest layout, is meticulously crafted to enhance functionality and elevate user satisfaction.
               </p>
@@ -73,6 +71,26 @@ function About() {
               </div>
             </div>
           </div>
+        </div>
+
+        {/* Numbers Section */}
+        <h1 className='text-2xl lg:text-4xl font-bold text-[#080127] text-center w-11/12 lg:w-1/2 mx-auto mt-16 mb-10'>
+          Our Result in Numbers
+        </h1>
+        <div className="flex flex-wrap justify-center gap-6 lg:gap-10 pb-20">
+          <div className="p-4 w-full sm:w-1/2 md:w-1/4 text-center">
+            <h1 className="text-3xl lg:text-4xl text-[#EE6F57] mb-4 font-bold">10</h1>
+            <h4 className="text-lg lg:text-xl">Years of Experience</h4>
+          </div>
+          <div className="p-4 w-full sm:w-1/2 md:w-1/4 text-center">
+            <h1 className="text-3xl lg:text-4xl text-[#EE6F57] mb-4 font-bold">200+</h1>
+            <h4 className="text-lg lg:text-xl">Projects Completed</h4>
+          </div>
+          <div className="p-4 w-full sm:w-1/2 md:w-1/4 text-center">
+            <h1 className="text-3xl lg:text-4xl text-[#EE6F57] mb-4 font-bold">50+</h1>
+            <h4 className="text-lg lg:text-xl">Team Members</h4>
+          </div>
+         
         </div>
       </div>
     </>
