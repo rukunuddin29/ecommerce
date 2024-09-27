@@ -22,12 +22,12 @@ function App() {
         <Route path='/' element={<Home />} />
         <Route path='/about' element={<About />} />
         <Route path='/cart' element={<Cart />} />
-        <Route path='/connect' element={<Connect/>} />
         <Route path='/product' element={<Contact/>} />
         <Route path='/login' element={<Login />} />
         <Route path='/products/:productsId' element={<Pdt/>} />
         <Route path='/placeorder' element={<PlaceOrder />} /> {/* Corrected path */}
         <Route path='/order' element={<Orders />} /> {/* Added missing closing tag */}
+        
       </Routes>
       <Footer />
     </>
