@@ -32,17 +32,17 @@ function Cart() {
             return (
               <div 
                 key={index} 
-                className="flex items-center justify-between border border-gray-300 rounded-lg p-6 bg-white shadow-lg"
+                className="flex flex-col lg:flex-row items-center justify-between border border-gray-300 rounded-lg p-6 bg-white shadow-lg space-y-4 lg:space-y-0"
               >
-                {/* Image and Product Details */}
-                <div className="flex items-center space-x-6">
+                {/* Image and Product Details */} 
+                <div className="flex flex-col sm:flex-row items-center sm:space-x-6">
                   <img 
                     className="w-24 h-24 object-cover rounded-md border border-gray-300"
                     src={productData.image} 
                     alt={productData.name} 
                   />
-                  <div>
-                    <p className="font-semibold text-xl text-gray-800">{productData.name}</p>
+                  <div className="mt-4 sm:mt-0 text-center sm:text-left">
+                    <p className="font-semibold text-lg lg:text-xl text-gray-800">{productData.name}</p>
                     <p className="text-lg text-gray-600">{currency}{productData.price}</p>
                   </div>
                 </div>
