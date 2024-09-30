@@ -88,42 +88,51 @@ function PlaceOrder() {
         </div>
 
         {/* Cart Total Section */}
-        <div className="m-20 pt-5 lg:pt-20 md:mt-0 md:ml-6 lg:w-1/3">
-          <h1 className="font-bold text-2xl mb-4 text-gray-800">Cart Total</h1>
-          <CartTotal />
+        <div className="m-5 pt-5 lg:m-20 lg:pt-20 md:mt-10 md:ml-6 lg:w-1/3">
+  <h1 className="font-bold text-2xl mb-6 text-gray-800">Cart Total</h1>
+  <CartTotal />
 
-          {/* Payment Method Section */}
-          <div className="mt-4">
-            <h1 className="font-bold text-xl mb-4 text-gray-800">Payment Method</h1>
-            <div className="flex flex-col gap-4 lg:flex-row">
-              <div
-                className={`flex items-center gap-3 border p-4 rounded-lg shadow-sm cursor-pointer transition duration-200 hover:shadow-md ${method === 'stripe' ? "bg-green-400" : ''}`}
-                onClick={() => setMethod('stripe')}
-              >
-                {/* Add content or icons for payment methods */}
-                <img src="" alt="stripe" />
-              </div>
-              <div
-                className={`flex items-center gap-3 border p-1 px-2 rounded-lg shadow-sm cursor-pointer transition duration-200 hover:shadow-md ${method === 'razorpay' ? "bg-green-400" : ''}`}
-                onClick={() => setMethod('razorpay')}
-              >
-                {/* Add content or icons for payment methods */}
-                <img src="" alt="razorpay" className="w-auto h-10 rounded-sm" />
-              </div>
-            </div>
+  {/* Payment Method Section */}
+  <div className="mt-8">
+    <h1 className="font-bold text-xl mb-4 text-gray-800">Payment Method</h1>
+    
+    <div className="flex flex-col gap-6 lg:flex-row">
+      {/* Stripe Method */}
+      <div
+        className={`flex items-center gap-4 border p-4 rounded-lg shadow-sm cursor-pointer transition duration-300 hover:shadow-md ${
+          method === 'stripe' ? 'bg-green-100 border-green-400' : ''
+        }`}
+        onClick={() => setMethod('stripe')}
+      >
+        <img src="" alt="stripe" className="w-12 h-auto" />
+        <span className="text-gray-700 font-medium">Stripe</span>
+      </div>
 
-            <div className="w-full text-end mt-8">
-              <button
-                onClick={handlePlaceOrder} // Use validation before navigating
-                className="bg-black rounded-xl text-white px-16 py-3 text-sm"
-              >
-                Place Order
-              </button>
-            </div>
-          </div>
-        </div>
+      {/* Razorpay Method */}
+      <div
+        className={`flex items-center gap-4 border p-4 rounded-lg shadow-sm cursor-pointer transition duration-300 hover:shadow-md ${
+          method === 'razorpay' ? 'bg-green-100 border-green-400' : ''
+        }`}
+        onClick={() => setMethod('razorpay')}
+      >
+        <img src="" alt="razorpay" className="w-12 h-auto rounded-sm" />
+        <span className="text-gray-700 font-medium">Razorpay</span>
       </div>
     </div>
+
+    {/* Place Order Button */}
+    <div className="w-full text-end mt-8">
+      <button
+        onClick={handlePlaceOrder} 
+        className="bg-black rounded-xl text-white px-12 py-3 text-sm lg:px-16 lg:py-4 hover:bg-gray-900 transition duration-300"
+      >
+        Place Order
+      </button>
+    </div>
+  </div>
+</div>
+
+</div></div>
   );
 }
 
