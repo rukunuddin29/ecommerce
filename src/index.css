@@ -6,12 +6,12 @@
 body{
     background-color:#F6F5F5;
 }
-a.active hr{
+a.active  ul{
     display:block;
 }
 
 @media (max-width:640px){
-    a.active{
+    a.active ul{
         background-color: aliceblue;
     }
 }

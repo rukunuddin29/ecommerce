@@ -1,18 +1,22 @@
-import React from 'react'
+import React from 'react';
 
-function Title({title}) {
+function Title({ title }) {
   return (
-    <>
-        <h2 className="flex flex-row flex-nowrap items-center mt-24 mb-10 ">
-            <span className="flex-grow block border-t border-[#080127]"></span>
-            <span className="flex-none block mx-4 px-4 py-2.5 text-xl rounded leading-none font-medium bg-[#080127] text-white">
-              {title}
-            </span>
-            <span className="flex-grow block border-t border-[#080127]"></span>
-          </h2>
+    <div className="relative w-1/2 mx-auto flex justify-center my-16">
+      <h2 className="flex items-center w-full">
+        {/* Left Border */}
+        <span className="flex-grow border-t border-gray-500"></span>
 
-    </>
-  )
+        {/* Title Text */}
+        <span className="mx-4 px-6 py-2 bg-gradient-to-r from-[#080127] to-[#1b1464] text-white text-2xl font-semibold tracking-wider uppercase rounded-lg shadow-lg transition-transform duration-300 hover:scale-105">
+          {title}
+        </span>
+
+        {/* Right Border */}
+        <span className="flex-grow border-t border-gray-500"></span>
+      </h2>
+    </div>
+  );
 }
 
-export default Title
+export default Title;

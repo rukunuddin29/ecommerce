@@ -50,7 +50,7 @@ function LatestCollections() {
 
   return (
     <div className='max-w-7xl px-6 lg:px-2 mx-auto'>
-      <div className="text-center px-0 lg:px-6">
+      <div className="text-center text-black px-0 lg:px-6">
         <Title title={'PRODUCTS'} />
       </div>
 

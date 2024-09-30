@@ -1,10 +1,12 @@
 import React, { useContext, useState, useEffect } from 'react';
 import { ShopContext } from '../context/ShopContext';
+import { useNavigate } from 'react-router-dom';
 import CartTotal from '../components/CartTotal';
 
 function Cart() {
   const { items, currency, cartItems, updateQnt } = useContext(ShopContext);
   const [cartData, setCartData] = useState([]);
+  const navigate = useNavigate(); // Correctly initialize navigate
 
   useEffect(() => {
     const tempData = [];
@@ -53,8 +55,11 @@ function Cart() {
                     type="number" 
                     className="border w-16 px-2 py-1 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                     min={1} 
-                    defaultValue={pdt.quantity}
-                    onChange={(e)=> e.target.value === '' || e.target.value === '0' ? null : updateQnt(pdt._id, Number(e.target.value))}
+                    value={pdt.quantity} // Use value instead of defaultValue
+                    onChange={(e) => {
+                      const quantity = e.target.value === '' || e.target.value === '0' ? null : Number(e.target.value);
+                      if (quantity) updateQnt(pdt._id, quantity);
+                    }}
                   />
                   <button 
                     onClick={() => updateQnt(pdt._id, 0)} 
@@ -70,6 +75,12 @@ function Cart() {
       </div>
 
       <CartTotal />
+      <button 
+  onClick={() => navigate('/placeOrder')} 
+  className={`w-full h-16 rounded-full bg-[#EE6F57] text-4xl font-bold text-white border hover:bg-[#fb5533] my-20 ${cartData.length === 0 ? "hidden" : '' }`}
+>
+  Check Out
+</button>
     </div>
   );
 }

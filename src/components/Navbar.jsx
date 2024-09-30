@@ -7,6 +7,7 @@ import { CgProfile } from "react-icons/cg";
 import { SlHandbag } from "react-icons/sl";
 import { IoCall } from "react-icons/io5";
 import Call from "./Call";
+import '../index.css'
 import { IoMdCloseCircleOutline } from "react-icons/io";
 
 function Navbar() {
@@ -39,16 +40,32 @@ function Navbar() {
           </h1>
           {/* Desktop Links */}
           <ul className="hidden lg:flex items-center gap-8 ml-10">
-            <NavLink to="/" className="flex flex-col items-center gap-1">
-              <p>HOME</p>
-            </NavLink>
-            <NavLink to="/about" className="flex flex-col items-center gap-1">
-              <p>ABOUT</p>
-            </NavLink>
-            <NavLink to="/product" className="flex flex-col items-center gap-1">
-              <p>PRODUCT</p>
-            </NavLink>
-          </ul>
+  <NavLink 
+    to="/" 
+    className={({ isActive }) => 
+      `flex flex-col items-center gap-1 ${isActive ? 'font-bold' : ''}`
+    }
+  >
+    <p>HOME</p>
+  </NavLink>
+  <NavLink 
+    to="/about" 
+    className={({ isActive }) => 
+      `flex flex-col items-center gap-1 ${isActive ? 'font-bold' : ''}`
+    }
+  >
+    <p>ABOUT</p>
+  </NavLink>
+  <NavLink 
+    to="/product" 
+    className={({ isActive }) => 
+      `flex flex-col items-center gap-1 ${isActive ? 'font-bold ' : ''}`
+    }
+  >
+    <p>PRODUCT</p>
+  </NavLink>
+</ul>
+
         </div>
         {/* Desktop Cart, Search, and Login */}
         <div className="flex items-center ml-auto mr-6 gap-4">
