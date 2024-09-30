@@ -1,6 +1,6 @@
 import React from 'react';
 import main from '../assets/main.png';
-import { FaArrowCircleRight } from "react-icons/fa";
+
 
 function Hero() {
   return (
@@ -20,7 +20,7 @@ function Hero() {
           <div className='mx-4 lg:mx-0'>
             <button className='flex items-center justify-center gap-2 text-[#080127] text-sm md:text-base w-full md:w-2/5 h-12 bg-[#fbbd60] hover:bg-[#fbbd60]/90 rounded-full px-6 py-2 lg:text-lg transition-colors duration-300 ease-in-out'>
               Explore Products
-              <FaArrowCircleRight className='text-lg lg:text-2xl gap-5'  />
+              
             </button>
           </div>
         </div>
