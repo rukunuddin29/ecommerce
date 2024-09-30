@@ -1,40 +1,41 @@
-import React, { useContext } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useContext, useState } from 'react';
 import { ShopContext } from '../context/ShopContext';
 
 function CartTotal() {
   const { currency, deliveryFee, getCartPrice } = useContext(ShopContext);
-  const navigate = useNavigate();
-
-  // Calculate subtotal
-  const subtotal = getCartPrice() + deliveryFee;
+  const [total,setTotal]=useState("0")
 
   return (
-    <div className={`${getCartPrice() === 0 ? "hidden" : " rounded-lg  p-6 "}`}>
+    <>
       {/* Cart total container */}
-      <h2 className="text-2xl font-bold text-gray-800 mb-4">Cart Summary</h2>
-      
-      <div className="w-full border-b pb-4 mb-4">
-        <div className="flex justify-between items-center">
-          <span className='text-xl lg:text-2xl text-gray-600 font-semibold'>Product Total</span>
-          <span className='text-xl lg:text-2xl font-semibold'>{currency} {getCartPrice().toFixed(2)}</span>
-        </div>
-      </div>
-
-      <div className="flex justify-between items-center border-b pb-4 mb-4">
-        <span className='text-xl lg:text-2xl text-gray-600 font-semibold'>Delivery Charges</span>
-        <span className='text-xl lg:text-2xl font-semibold'>{currency} {deliveryFee.toFixed(2)}</span>
-      </div>
-
-      <div className="flex justify-between items-center">
-        <span className='text-xl lg:text-2xl text-gray-600 font-semibold'>Sub-Total</span>
-        <span className='text-xl lg:text-2xl font-semibold'>{currency} {subtotal.toFixed(2)}</span>
-      </div>
-      
-      <div className="mt-6">
+      <div className={`${getCartPrice()===0 ? "hidden" : "" }`}>
+      <div className={`w-full h-16 mt-10 border flex justify-between items-center px-6 `}>
+ 
+        <div className='text-xl lg:text-3xl  text-gray-600 font-semibold'>Subtotal</div>
+       
+        <div className='text-xl lg:text-3xl  font-semibold'>{currency} {getCartPrice()}.00</div>
+        
         
       </div>
-    </div>
+      <div className={`w-full h-10 mt-4 border flex justify-between items-center px-6`}>
+ 
+ <div className='text-xl lg:text-2xl text-gray-600 font-semibold'>Delivery Charges</div>
+
+ <div className='text-xl lg:text-2xl  font-semibold'>{currency} {deliveryFee}.00</div>
+ <div className={`w-full h-16 mt-10 border flex justify-between items-center px-6 `}>
+ 
+        <div className='text-xl lg:text-3xl  text-gray-600 font-semibold'>total</div>
+       
+        <div className='text-xl lg:text-3xl  font-semibold'>{currency} {getCartPrice()}.00</div>
+        
+        
+      </div>
+ 
+</div>
+<button className='w-full h-16 rounded-full bg-[#EE6F57] text-4xl font-bold text-white border hover:bg-[#fb5533] my-20'>Check Out</button>
+</div>
+
+    </>
   );
 }
 
