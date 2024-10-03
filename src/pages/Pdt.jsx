@@ -28,7 +28,7 @@ function Pdt() {
             <img
               src={productData.image}
               alt={productData.name}
-              className="w-[100vh] h-[80vh] object-cover rounded-lg shadow-lg border border-black"
+              className="w-[100vh] h-[50vh] lg:h-[80vh] object-cover rounded-lg shadow-lg border "
             />
           </div>
 

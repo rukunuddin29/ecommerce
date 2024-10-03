@@ -18,7 +18,7 @@ const ContactSection = () => {
   };
 
   return (
-    <section className="py-24">
+    <section className="pt-8 pb-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 border bg-white rounded-2xl shadow-lg grid-cols-1">
           <div className="lg:mb-0 mb-10">
