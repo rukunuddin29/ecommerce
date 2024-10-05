@@ -1,15 +1,15 @@
 import heavy from './heavyDuty.jpg';
-import ag from './AG.jpg'
-import dieGrinder from './dieGrinder.jpg'
-import grinder from './grinder.jpg'
-import vertical from './vertical.jpg'
-import bench from './bench.jpg'
-import niddle from './3niddle.jpeg'
-import sandR from './3sand.png'
-import rivet from './rivetbuster.jpeg'
-import hoist from './hoist.jpg'
-import wrench from './impactwrench.jpg'
-import paving from './paving.jpg'
+import ag from './AG.jpg';
+import dieGrinder from './dieGrinder.jpg';
+import grinder from './grinder.jpg';
+import vertical from './vertical.jpg';
+import bench from './bench.jpg';
+import niddle from './3niddle.jpeg';
+import sandR from './3sand.png';
+import rivet from './rivetbuster.jpeg';
+import hoist from './hoist.jpg';
+import wrench from './impactwrench.jpg';
+import paving from './paving.jpg';
 
 export const assets = {
   heavy,
@@ -23,98 +23,96 @@ export const assets = {
   rivet,
   hoist,
   wrench,
-  paving
-}
+  paving,
+};
 
 export const items = [
   {
-    _id: "aaaaa",
-    name: "Air Sander",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    price: "200",
+    _id: 'aaaaa',
+    name: 'Air Sander',
+    description: 'High-performance air sander designed for precision surface preparation and finishing, ideal for professional applications.',
+    price: '200',
     image: assets.heavy,
-    category: "grinder", // Changed to "grinder"
+    category: 'grinder',
   },
   {
-    _id: "bbbbb",
-    name: "Heavy Duty Grinder ",
-    description: "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    price: "300",
+    _id: 'bbbbb',
+    name: 'Heavy Duty Grinder',
+    description: 'A robust and powerful grinder engineered for heavy-duty tasks, offering durability and efficiency in industrial grinding.',
+    price: '300',
     image: assets.ag,
-   category: "grinder", // Changed to match "driller" category in Contact component
+    category: 'grinder',
   },
   {
-    _id: "ccccc",
-    name: "Die Grinder ",
-    description: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.",
-    price: "250",
+    _id: 'ccccc',
+    name: 'Die Grinder',
+    description: 'Compact yet powerful die grinder, perfect for intricate metalworking and polishing applications, delivering high precision.',
+    price: '250',
     image: assets.dieGrinder,
-    category: "grinder", 
+    category: 'grinder',
   },
   {
-    _id: "ddddd",
-    name: "Bench Rammers",
-    description: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore.",
-    price: "150",
+    _id: 'ddddd',
+    name: 'Bench Rammers',
+    description: 'Reliable and efficient bench rammers ideal for compacting materials, suitable for industrial applications requiring heavy impact.',
+    price: '150',
     image: assets.bench,
-    category: "rammers", // Changed to match "rammers" category in Contact component
-  },
-  // Repeat the process for other items, aligning their categories
-  {
-    _id: "eeee",
-    name: "Vertical Grinder & Sander",
-    description: "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui.",
-    price: "220",
-    image:assets.vertical,
-    category: "grinder", // Example updated category
+    category: 'rammers',
   },
   {
-    _id: "fffff",
-    name: "Sand Rammer",
-    description: "Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse.",
-    price: "180",
-    image:assets.sandR,
-    category: "rammers", // Example updated category
+    _id: 'eeee',
+    name: 'Vertical Grinder & Sander',
+    description: 'Versatile vertical grinder and sander for both grinding and sanding tasks, ensuring optimal performance across various materials.',
+    price: '220',
+    image: assets.vertical,
+    category: 'grinder',
   },
   {
-    _id: "ggggg",
-    name: "Rivet Buster",
-    description: "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis.",
-    price: "270",
+    _id: 'fffff',
+    name: 'Sand Rammer',
+    description: 'Industrial-grade sand rammer designed for compacting sand molds, offering durability and precision for foundry applications.',
+    price: '180',
+    image: assets.sandR,
+    category: 'rammers',
+  },
+  {
+    _id: 'ggggg',
+    name: 'Rivet Buster',
+    description: 'High-impact rivet buster built for heavy-duty demolition and metalwork, delivering exceptional power and control.',
+    price: '270',
     image: assets.rivet,
-    category: "driller", // Example updated category
+    category: 'driller',
   },
   {
-    _id: "ggggg1",
-    name:"Hoists",
-    description: "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis.",
-    price: "270",
+    _id: 'ggggg1',
+    name: 'Hoists',
+    description: 'Heavy-duty hoists designed for lifting and moving heavy loads safely and efficiently in industrial environments.',
+    price: '270',
     image: assets.hoist,
-    category: "driller", // Example updated category
+    category: 'driller',
   },
-    {
-    _id: "ggggg2",
-    name: "Impact Wrench",
-    description: "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis.",
-    price: "270",
+  {
+    _id: 'ggggg2',
+    name: 'Impact Wrench',
+    description: 'Powerful impact wrench designed for high-torque applications, perfect for automotive and industrial maintenance tasks.',
+    price: '270',
     image: assets.wrench,
-    category: "impact wrench", // Example updated category
-  },
-  // Continue updating the rest of the items
-  {
-    _id: "fffff",
-    name: "Niddle Rammers",
-    description: "Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse.",
-    price: "180",
-    image:assets.niddle,
-    category: "rammers", // Example updated category
+    category: 'impact wrench',
   },
   {
-    _id: "fffff",
-    name: "Paving Break",
-    description: "Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse.",
-    price: "180",
+    _id: 'fffff1',
+    name: 'Niddle Rammers',
+    description: 'Precision niddle rammers ideal for confined space applications, delivering efficient compaction in hard-to-reach areas.',
+    price: '180',
+    image: assets.niddle,
+    category: 'rammers',
+  },
+  {
+    _id: 'fffff2',
+    name: 'Paving Breaker',
+    description: 'Durable paving breaker designed for breaking concrete and asphalt, delivering high-impact performance for tough jobs.',
+    price: '180',
     image: assets.paving,
-    category: "impact wrench", // Example updated category
+    category: 'impact wrench',
   },
 ];
