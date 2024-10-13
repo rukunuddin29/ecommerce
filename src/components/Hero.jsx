@@ -1,13 +1,20 @@
 import React from 'react';
 import main from '../assets/main.png';
-
+import { useNavigate } from "react-router-dom";
 import { motion } from 'framer-motion';
 
 function Hero() {
+  const navigate = useNavigate();
+
+  const handleProducts = (e) => {
+    e.preventDefault();
+    navigate("/product "); 
+  };
+
   return (
     <div className='py-10'>
       <motion.div
-        className='flex flex-col lg:flex-row bg-[#080127] rounded-2xl mx-auto h-auto lg:h-[80vh] w-11/12 lg:w-5/6'
+        className='flex flex-col lg:flex-row bg-[#080127] rounded-2xl mx-auto h-auto lg:h-[80vh] w-11/12 lg:w-[175vh]'
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1.5 }}
@@ -52,9 +59,12 @@ function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.1, duration: 1 }}
           >
-            <button className='flex items-center justify-center gap-2 text-[#080127] text-sm md:text-base w-full md:w-2/5 h-12 bg-[#fbbd60] hover:bg-[#fbbd60]/90 rounded-full px-6 py-2 lg:text-lg transition-colors duration-300 ease-in-out'>
-              Explore Products
-         
+            <button 
+              className='flex items-center justify-center gap-2 text-[#080127] text-sm md:text-base w-full md:w-2/5 h-12 bg-orange-300 hover:bg-[#fbbd60]/90 rounded-full px-1 py-2 lg:text-lg transition-colors duration-300 ease-in-out' 
+              onClick={handleProducts} // Corrected here
+            >
+              Explore Products <span className='border text-white bg-black border-black w-10 h-10 p-1 rounded-full ml-1'>➜</span> 
+     
             </button>
           </motion.div>
         </motion.div>
