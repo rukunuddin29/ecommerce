@@ -12,7 +12,7 @@ function Hero() {
   };
 
   return (
-    <div className='py-10'>
+    <div className='py-10 '>
       <motion.div
         className='flex flex-col lg:flex-row bg-[#080127] rounded-2xl mx-auto h-auto lg:h-[80vh] w-11/12 lg:w-[175vh]'
         initial={{ opacity: 0 }}

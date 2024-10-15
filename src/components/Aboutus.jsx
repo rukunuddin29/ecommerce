@@ -4,7 +4,7 @@ import about from '../assets/ABOUT.png';
 
 function Aboutus() {
   return (
-    <section className="py-8 bg-gray-100">
+    <section className="py-8  ">
       <div className="max-w-7xl mx-auto px-4">
         {/* About Us Section */}
         <div className="text-center mb-6">

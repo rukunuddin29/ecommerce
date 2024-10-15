@@ -16,7 +16,7 @@ function RelatedProducts({ Category }) {
 
   return (
     <>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 gap-y-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 gap-y-6 ">
         {related.map((item) => (
           <CardItems key={item._id} id={item._id} image={item.image} name={item.name} price={item.price} />
 

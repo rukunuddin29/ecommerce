@@ -49,7 +49,7 @@ function LatestCollections() {
   }, [items]);
 
   return (
-    <div className='px-2 lg:px-28'>
+    <div className='px-10 lg:px-28 '>
       <div className="text-center mb-6">
         {/* Updated title with consistent style */}
         <Title title={'PRODUCTS'} />

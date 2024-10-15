@@ -1,20 +1,38 @@
-import React from "react";
+import React, { useState } from "react";
 import a from '../assets/A.jpg'; 
 
 const ContactSection = () => {
-  const handlePhoneClick = () => {
-    // You can handle phone click logic here (e.g., initiate a call)
-    console.log('Phone number clicked');
-  };
+  const [statusMessage, setStatusMessage] = useState('');
 
-  const handleEmailClick = () => {
-    // You can handle email click logic here (e.g., open mail client)
-    console.log('Email clicked');
-  };
+  const onSubmit = async (event) => {
+    event.preventDefault();
+    const formData = new FormData(event.target);
 
-  const handleAddressClick = () => {
-    // You can handle address click logic here (e.g., show location)
-    console.log('Address clicked');
+    formData.append("access_key", "277d4187-6323-4fd4-8837-5445788d7738");
+
+    const object = Object.fromEntries(formData);
+    const json = JSON.stringify(object);
+
+    try {
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json"
+        },
+        body: json
+      }).then((res) => res.json());
+
+      if (res.success) {
+        setStatusMessage("Message sent successfully!");
+        event.target.reset(); // Clear form
+      } else {
+        setStatusMessage("Failed to send message.");
+      }
+    } catch (error) {
+      console.error("Error:", error);
+      setStatusMessage("Something went wrong. Please try again later.");
+    }
   };
 
   return (
@@ -33,31 +51,19 @@ const ContactSection = () => {
               </h1>
               <div className="absolute bottom-0 w-full lg:p-11 p-5">
                 <div className="bg-white opacity-85 rounded-lg p-6 block">
-                  <a 
-                    href="#"
-                    onClick={handlePhoneClick}
-                    className="flex items-center mb-4"
-                  >
+                  <a href="#" className="flex items-center mb-4">
                     <div className="w-8 h-8 bg-[#080127] rounded-full"></div>
                     <h5 className="text-black text-base font-normal leading-6 ml-5">
                       470-601-1911
                     </h5>
                   </a>
-                  <a 
-                    href="#"
-                    onClick={handleEmailClick}
-                    className="flex items-center mb-4"
-                  >
+                  <a href="#" className="flex items-center mb-4">
                     <div className="w-8 h-8 bg-[#080127] rounded-full"></div>
                     <h5 className="text-black text-base font-normal leading-6 ml-5">
                       Pagedone1234@gmail.com
                     </h5>
                   </a>
-                  <a 
-                    href="#"
-                    onClick={handleAddressClick}
-                    className="flex items-center mb-4"
-                  >
+                  <a href="#" className="flex items-center mb-4">
                     <div className="w-8 h-8 bg-[#080127] rounded-full"></div>
                     <h5 className="text-black text-base font-normal leading-6 ml-5">
                       654 Sycamore Avenue, Meadowville, WA 76543
@@ -68,33 +74,43 @@ const ContactSection = () => {
             </div>
           </div>
 
-          <div className="bg-gray-50 p-5 lg:p-11 lg:rounded-r-2xl rounded-2xl">
+          <form onSubmit={onSubmit} className="bg-gray-50 p-5 lg:p-11 lg:rounded-r-2xl rounded-2xl">
             <h2 className="text-[#080127] font-manrope text-4xl font-semibold leading-10 mb-11">
               Send Us A Message
             </h2>
             <input
               type="text"
+              name="name" // Added name attribute
               className="w-full h-12 text-gray-600 placeholder-gray-400 shadow-sm bg-transparent text-lg font-normal leading-7 rounded-full border border-gray-200 focus:outline-none pl-4 mb-4"
               placeholder="Name"
+              required
             />
             <input
               type="email"
+              name="email" // Added name attribute
               className="w-full h-12 text-gray-600 placeholder-gray-400 shadow-sm bg-transparent text-lg font-normal leading-7 rounded-full border border-gray-200 focus:outline-none pl-4 mb-4"
               placeholder="Email"
+              required
             />
             <input
               type="tel"
+              name="phone" // Added name attribute
               className="w-full h-12 text-gray-600 placeholder-gray-400 shadow-sm bg-transparent text-lg font-normal leading-7 rounded-full border border-gray-200 focus:outline-none pl-4 mb-4"
               placeholder="Phone"
             />
             <textarea
+              name="message" // Added name attribute
               className="w-full h-24 text-gray-600 placeholder-gray-400 shadow-sm bg-transparent text-lg font-normal leading-7 rounded-lg border border-gray-200 focus:outline-none pl-4 mb-10"
               placeholder="Message"
+              required
             />
             <button className="w-full h-12 text-white text-base font-semibold leading-6 rounded-full transition-all duration-500 hover:bg-indigo-900 bg-[#080127]">
               Send
             </button>
-          </div>
+            {statusMessage && (
+              <p className="mt-4 text-sm text-center text-gray-600">{statusMessage}</p>
+            )}
+          </form>
         </div>
       </div>
     </section>

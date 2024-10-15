@@ -7,14 +7,12 @@ function CardItems({ id, image, name, price }) {
 
   return (
     <Link
-      className="relative flex flex-col  w-full max-w-full overflow-hidden rounded-lg border hover:border-gray-900 bg-white border-gray-200 shadow-md"
+      className="relative flex flex-col  w-full max-w-full overflow-hidden  border hover:border-gray-300 bg-white p-2 rounded-xl border-gray-200 shadow-md"
       to={`/products/${id}`}
     >
-      <div className="relative flex h-80  md:h-64 lg:h-64 overflow-hidden rounded-t-lg">
-        <img className="object-cover w-full h-full  " src={image} alt="product" />
-        <span className="absolute top-2 left-2 rounded-full bg-[#FE7A36] px-2 py-1 text-center text-xs font-medium text-white sm:text-sm">
-          39% OFF
-        </span>
+      <div className="relative flex h-80 overflow-hidden ">
+        <img className="object-cover w-full h-full border-2 p-2 rounded-xl " src={image} alt="product" />
+     
       </div>
       <div className="mt-3 px-4 pb-5">
         <h5 className="text-lg font-semibold text-[#080127] sm:text-xl">
@@ -22,7 +20,7 @@ function CardItems({ id, image, name, price }) {
         </h5>
         <div className="mt-2 mb-4 flex items-center justify-between">
           <p className="flex items-center">
-            <span className="text-2xl font-bold text-[#080127] sm:text-3xl">
+            <span className="text-xl font-bold text-[#080127] sm:text-3xl">
               {currency}
               {price}
             </span>
