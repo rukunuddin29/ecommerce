@@ -1,13 +1,12 @@
 import React, { useContext, useState, useEffect } from "react";
 import { ShopContext } from "../context/ShopContext";
-
 import CardItems from "../components/CardItems";
 
 function Contact() {
-  const { items, search } = useContext(ShopContext);
+  const { items } = useContext(ShopContext);
   const [showCategories, setShowCategories] = useState(false);
-  const [category, setCategory] = useState([]);
   const [products, setProducts] = useState([]);
+  const [searchTerm, setSearchTerm] = useState("");
 
   const toggleCategory = (e) => {
     const value = e.target.value;
@@ -16,57 +15,58 @@ function Contact() {
     );
   };
 
-  useEffect(() => {
-    setProducts(items);
-  }, [items]);
-
-  const applyFilter = () => {
-    let filteredProducts = items.slice();
-
-    if (search) {
-      filteredProducts = filteredProducts.filter((item) =>
-        item.name.toLowerCase().includes(search.toLowerCase())
-      );
-    }
-
-    if (category.length > 0) {
-      filteredProducts = filteredProducts.filter((item) =>
-        category.includes(item.category)
-      );
-    }
-
-    setProducts(filteredProducts);
+  // Filter products based on search input
+  const handleSearch = (e) => {
+    setSearchTerm(e.target.value);
   };
 
   useEffect(() => {
-    applyFilter();
-  }, [category, search]);
+    if (searchTerm) {
+      const filteredProducts = items.filter((product) =>
+        product.name.toLowerCase().includes(searchTerm.toLowerCase())
+      );
+      setProducts(filteredProducts);
+    } else {
+      setProducts(items);
+    }
+  }, [items, searchTerm]);
 
   return (
-    <div className="flex flex-col p-4 gap-8 pt-12 border-gray-200 bg-white">
-    
+    <div className="flex flex-col p-4 gap-8 pt-5 border-gray-200 bg-white">
+      {/* Search Bar */}
+      <div className="flex mx-auto items-center">
+       
+        <input
+          type="text"
+          placeholder="Search products..."
+          value={searchTerm}
+          onChange={handleSearch}
+       class="font-bold uppercase rounded-full w-[40vh] lg:w-[80vh] py-4 pl-4 text-gray-700 bg-gray-100 leading-tight focus:outline-none focus:shadow-outline lg:text-sm text-xs"
+                
+        />
+      </div>
 
       <div className="flex flex-col sm:flex-row gap-8 sm:gap-16">
         {/* Sidebar */}
         <div className="w-1/8 lg:border-r border-gray-300 pr-6">
-          <h2 className="text-2xl font-bold flex items-center justify-between sm:justify-start text-gray-800">
+          <h2 className="text-2xl font-bold mx-4 flex items-center justify-between  text-gray-800">
             Categories
             <span
               onClick={() => setShowCategories(!showCategories)}
-              className={`cursor-pointer transition-transform transform sm:hidden ml-4 ${
+              className={`cursor-pointer transition-transform transform sm:hidden -mr-8 ${
                 showCategories ? "rotate-90" : ""
               }`}
               aria-label="Toggle categories"
             >
-              ⪼
+             ➤
             </span>
           </h2>
 
           {/* Category List - Hidden on small screens if showCategories is false */}
           <div
-            className={`mt-6 ${
+            className={`mt-4 ${
               !showCategories ? "hidden sm:block" : "block"
-            } flex flex-col gap-4 text-sm font-medium text-gray-600`}
+            } flex flex-col gap-4 w-full text-sm rounded-xl border p-2 font-medium mx-4 text-gray-600`}
           >
             {["grinder", "hammers", "driller", "rammers", "impact wrench"].map(
               (cat) => (
