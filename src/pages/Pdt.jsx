@@ -62,12 +62,16 @@ function Pdt() {
 
             {/* Add to Cart and Wishlist Buttons */}
             <div className="flex items-center space-x-4">
-              <button
-                onClick={() => addToCart(productData._id)}
-                className="px-8 py-3 bg-indigo-600 text-white rounded-lg shadow-lg hover:bg-indigo-500 transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-xl"
-              >
-                Add to Cart
-              </button>
+            <button
+  onClick={() => {
+    addToCart(productData._id);
+    alert("Product has been added to the cart!");
+  }} 
+  className="px-8 py-3 bg-indigo-600 text-white rounded-lg shadow-lg hover:bg-indigo-500 transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-xl"
+>
+  Add to Cart
+</button>
+
               <button
                 className="px-8 py-3 border-2 border-indigo-600 text-indigo-600 rounded-lg hover:bg-indigo-100 transition duration-300 ease-in-out transform hover:scale-105"
               >

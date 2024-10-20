@@ -3,17 +3,19 @@ import CartTotal from "../components/CartTotal";
 import { useNavigate } from 'react-router-dom';
 
 function PlaceOrder() {
-  const [method, setMethod] = useState('razorpay');
+
   const [formData, setFormData] = useState({
     firstName: '',
-    lastName: '',
+    lastName: '', 
     email: '',
     street: '',
     city: '',
     state: '',
     zipcode: '',
-    address: ''
+    address: '',
+    additionalNotes: '' // Add additionalNotes to state
   });
+  
   const [errorMessage, setErrorMessage] = useState('');
   const navigate = useNavigate();
 
@@ -26,13 +28,20 @@ function PlaceOrder() {
     });
   };
 
-  // Validation function
+  // Email validation function
+  const isValidEmail = (email) => /\S+@\S+\.\S+/.test(email);
+
+  // Function to handle order submission
   const handlePlaceOrder = () => {
     const { firstName, lastName, email, street, city, state, zipcode, address } = formData;
 
-    // Check if all required fields are filled
+    // Check if all required fields are filled and validate email and zipcode
     if (!firstName || !lastName || !email || !street || !city || !state || !zipcode || !address) {
       setErrorMessage("Please fill in all required fields.");
+    } else if (!isValidEmail(email)) {
+      setErrorMessage("Please enter a valid email.");
+    } else if (zipcode.length !== 5) {
+      setErrorMessage("Zipcode must be 5 digits.");
     } else {
       // If validation passes, clear error message and navigate
       setErrorMessage('');
@@ -77,6 +86,9 @@ function PlaceOrder() {
 
             <div className="my-4">
               <textarea
+                name="additionalNotes"
+                value={formData.additionalNotes} // Added value to manage input
+                onChange={handleInputChange}    // Added handler
                 placeholder="Additional Notes"
                 className="w-full h-32 bg-gray-200 text-gray-900 p-3 rounded-lg focus:outline-none focus:shadow-outline transition duration-200"
               ></textarea>
@@ -89,50 +101,21 @@ function PlaceOrder() {
 
         {/* Cart Total Section */}
         <div className="m-5 pt-5 lg:m-20 lg:pt-20 md:mt-10 md:ml-6 lg:w-1/3">
-  <h1 className="font-bold text-2xl mb-6 text-gray-800">Cart Total</h1>
-  <CartTotal />
+          <h1 className="font-bold text-2xl mb-6 text-gray-800">Cart Total</h1>
+          <CartTotal />
 
-  {/* Payment Method Section */}
-  <div className="mt-8">
-    <h1 className="font-bold text-xl mb-4 text-gray-800">Payment Method</h1>
-    
-    <div className="flex flex-col gap-6 lg:flex-row">
-      {/* Stripe Method */}
-      <div
-        className={`flex items-center gap-4 border p-4 rounded-lg shadow-sm cursor-pointer transition duration-300 hover:shadow-md ${
-          method === 'stripe' ? 'bg-green-100 border-green-400' : ''
-        }`}
-        onClick={() => setMethod('stripe')}
-      >
-        <img src="" alt="stripe" className="w-12 h-auto" />
-        <span className="text-gray-700 font-medium">Stripe</span>
-      </div>
-
-      {/* Razorpay Method */}
-      <div
-        className={`flex items-center gap-4 border p-4 rounded-lg shadow-sm cursor-pointer transition duration-300 hover:shadow-md ${
-          method === 'razorpay' ? 'bg-green-100 border-green-400' : ''
-        }`}
-        onClick={() => setMethod('razorpay')}
-      >
-        <img src="" alt="razorpay" className="w-12 h-auto rounded-sm" />
-        <span className="text-gray-700 font-medium">Razorpay</span>
+          {/* Place Order Button */}
+          <div className="w-full text-end mt-8">
+            <button
+              onClick={handlePlaceOrder} 
+              className="bg-black rounded-xl text-white px-12 py-3 text-sm lg:px-16 lg:py-4 hover:bg-gray-900 transition duration-300"
+            >
+              Place Order
+            </button>
+          </div>
+        </div>
       </div>
     </div>
-
-    {/* Place Order Button */}
-    <div className="w-full text-end mt-8">
-      <button
-        onClick={handlePlaceOrder} 
-        className="bg-black rounded-xl text-white px-12 py-3 text-sm lg:px-16 lg:py-4 hover:bg-gray-900 transition duration-300"
-      >
-        Place Order
-      </button>
-    </div>
-  </div>
-</div>
-
-</div></div>
   );
 }
 

@@ -11,7 +11,7 @@ function CartTotal() {
   return (
     <>
       {/* Cart total container */}
-      <div className="w-full mt-10">
+      <div className="w-1/2 mt-10 ">
         
         {/* Subtotal */}
         <div className="w-full h-16 border flex justify-between items-center px-6">
@@ -30,8 +30,9 @@ function CartTotal() {
           <div className="text-xl lg:text-3xl text-gray-600 font-semibold">Total</div>
           <div className="text-xl lg:text-3xl font-semibold">{currency} {cartPrice + deliveryFee}.00</div>
         </div>
-
+  
       </div>
+   
     </>
   );
 }

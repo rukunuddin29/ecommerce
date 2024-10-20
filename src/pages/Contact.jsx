@@ -41,7 +41,7 @@ function Contact() {
           placeholder="Search products..."
           value={searchTerm}
           onChange={handleSearch}
-       class="font-bold uppercase rounded-full w-[40vh] lg:w-[80vh] py-4 pl-4 text-gray-700 bg-gray-100 leading-tight focus:outline-none focus:shadow-outline lg:text-sm text-xs"
+       className="font-bold uppercase rounded-full w-[40vh] lg:w-[80vh] py-4 pl-4 text-gray-700 bg-gray-100 leading-tight focus:outline-none focus:shadow-outline lg:text-sm text-xs"
                 
         />
       </div>
